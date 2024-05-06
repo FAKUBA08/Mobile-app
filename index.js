@@ -101,7 +101,7 @@ menuBtn.addEventListener('click', function () {
 });
 
 phone.addEventListener('click', function () {
-    window.location.href = './UU';
+    window.location.href = './UU/phone.html';
 });
 gallary.addEventListener('click',function(){
     mobileBox.classList.add('cameraImage');
