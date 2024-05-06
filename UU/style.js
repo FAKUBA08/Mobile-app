@@ -35,10 +35,10 @@ number.addEventListener('click',function(){
   // alert('kjhgfd')
   
  })
- home.addEventListener('click',function(){
-  window.location.href="/index.html"
+//  home.addEventListener('click',function(){
+//   window.location.href="/index.html"
 
- })
+//  })
  contactBtn.addEventListener('click',function(){
  document.querySelector(".contactList").style.display='block'
  document.querySelector('.press').style.display='none'
