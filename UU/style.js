@@ -36,7 +36,7 @@ number.addEventListener('click',function(){
   
  })
  home.addEventListener('click',function(){
-  window.location.href='/index.html'
+  window.location.href='index.html'
 
  })
  contactBtn.addEventListener('click',function(){
