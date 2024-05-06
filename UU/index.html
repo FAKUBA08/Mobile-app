@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contact" style="background-color: white;">
+      <div class="contactInner">
+        <div class="sims">
+          <p class="choose">Choose a sim for this call:</p>
+          <p class="underline"></p>
+          <button class="cancelCall" id="cancelall">CANCEL</button>
+          <div class="optionSims">
+            <div class="airtel">AIRTEL-NG</div>
+            <div class="mtn">MTN-NG</div>
+          </div>
+          
+        </div>
+        <div class="phone-attachment">
+          <div class="item1">
+               </div>
+          <div class="item2">
+            </div>
+      </div>
+        <button class="home">
+          <img src="pic/transparent-arrows-icon-left-arrow-icon-back-icon-5d63cccb869fd0.1391927915668215795514-removebg-preview.png" alt="">
+        </button>
+        <div class="type">
+          <h3> Recent</h3>
+        </div>
+        <p id="display"></p>
+        <div id="volumes">
+          <div class="volume-increase">
+  
+           </div>
+         <div class="volume-decrease">
+  
+         </div>
+       </div>
+      <div class="toggles" id="On"></div>
+       <p class="panel"></p>
+        <div class="press">
+           <div class="Btn">
+            <div class="btn"><button class="seen">1</button></div>
+            <div class="btn"><button class="seen">2</button></div>
+            <div class="btn"><button class="seen">3</button></div>
+        
+            <div class="btn"><button class="seen">4</button></div>
+        
+            <div class="btn"><button class="seen">5</button></div>
+            <div class="btn"><button class="seen">6</button></div>
+        
+            <div class="btn"><button class="seen">7</button></div>
+        
+            <div class="btn"><button class="seen">8</button></div>
+        
+            <div class="btn"><button class="seen">9</button></div>
+            
+            <div class="btn"><button class="seen1" onclick="check('*')">*</button></div>
+            
+            <div class="btn"><button class="seen1" onclick="check('0')">0</button></div>
+            
+            <div class="btn"><button class="seen1" onclick="check('#')">#</button></div>
+            <!-- <button onclick="bSpace()" style="background-color: aliceblue;">b</button> -->
+        
+            <div class="call">
+         <div class="img-box">
+          <img src="pic/887af80b0de39706fbcafc07b91869c9-removebg-preview.png" alt="">
+          </div>
+             </div>
+             <div class="abort">
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+              <div class="dott">.</div>
+            </div>
+        
+           
+           </div>
+          
+        </div>
+          <div class="number">
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+           <div class="dott1">.</div>
+          </div>
+    <div class="announcement">
+      <div class="announcement-inner">
+        <div class="recent">
+          <img src="pic/5983619-removebg-preview.png" alt="">
+          <a class="recent-inner">Recent</a>
+       
+        </div>
+        <div class="contact" id="contactBtn">
+       
+          <img src="pic/6567720-200-removebg-preview.png" alt="">
+          <a class="contact-inner">Contact</a>
+        
+        </div>
+      </div>
+    </div>
+    <span>
+    <div class="contactList">
+      <button class="home" id="home2">
+        <img src="pic/transparent-arrows-icon-left-arrow-icon-back-icon-5d63cccb869fd0.1391927915668215795514-removebg-preview.png" alt="">
+      </button>
+      <div class="contactType">
+        <h4 class="Con">Contact</h4>
+        <div class="container">
+
+        </div>
+
+      </div>
+      <div class="accordion">
+        <img src="pic/112-1120914_plus-sign-icon-png-plus-icon-png-transparent-removebg-preview.png" alt="">
+      </div>
+      <p class="seen"></p>
+
+  <div class="contactSave">
+    <div class="save">
+      <h4>Save</h4>
+    </div>
+    <div class="wave-group">
+      <input required="" type="text" class="input" id="box1">
+      <span class="bar"></span>
+      <label class="label">
+        <span class="label-char" style="--index: 0">F</span>
+        <span class="label-char" style="--index: 1">i</span>
+        <span class="label-char" style="--index: 2">r</span>
+        <span class="label-char" style="--index: 3">s</span>
+        <span class="label-char" style="--index: 3">t</span>
+        <span class="label-char" style="--index: 0">N</span>
+        <span class="label-char" style="--index: 1">a</span>
+        <span class="label-char" style="--index: 2">m</span>
+        <span class="label-char" style="--index: 3">e</span>
+      </label>
+    </div>
+
+    
+    <div class="wave-group">
+      <input required="" type="text" class="input" id="box2">
+      <span class="bar"></span>
+      <label class="label">
+        <span class="label-char" style="--index: 0">L</span>
+        <span class="label-char" style="--index: 1">a</span>
+        <span class="label-char" style="--index: 2">s</span>
+        <span class="label-char" style="--index: 3">t</span>
+        <span class="label-char" style="--index: 3"> </span>
+        <span class="label-char" style="--index: 0">N</span>
+        <span class="label-char" style="--index: 1">a</span>
+        <span class="label-char" style="--index: 2">m</span>
+        <span class="label-char" style="--index: 3">e</span>
+      </label>
+    </div>
+
+    <div class="wave-group">
+      <input required="" type="number" class="input" id="box3">
+      <span class="bar"></span>
+      <label class="label">
+        <span class="label-char" style="--index: 0">P</span>
+        <span class="label-char" style="--index: 1">h</span>
+        <span class="label-char" style="--index: 2">o</span>
+        <span class="label-char" style="--index: 3">n</span>
+        <span class="label-char" style="--index: 3"> e</span>
+        <span class="label-char" style="--index: 3"> N</span>
+        <span class="label-char" style="--index: 0">o</span>
+      </label>
+    </div>
+  </div>
+    </div>
+    </div>
+
+    </span>
+
+      </div>
+      </div>
+</body>
+<script src="style.js"></script>
+</html>
