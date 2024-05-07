@@ -397,7 +397,7 @@
   }
   @keyframes scroll{
   0%{
-  transform: translateY(-100%);
+  transform: translateY(100%);
   }
   }
   .save{
@@ -414,28 +414,30 @@
   margin-left: 1.2rem;
   }
   .accordion img{
-  width: 13%;
+  width: 9%;
   position: relative;
-  top: -2.6rem;
+  top: -5.3rem;
 
-  left: 80%;
+  left: 88%;
   }
   .Con{
   text-decoration: underline;
   font-size: 20px;
   position: relative;
-  top: 2rem;
+  top: 1.1rem;
   left: 2rem;
   }
   #delete{
   /* display: none; */
   margin-top: .2rem;
   margin-bottom: -1.1rem;
+  /* position: absolute; */
   }
   #delete img{
-  width: 6.5%;
+  width: 7%;
   position: absolute;
   margin-top: -1.1rem;
+  left: 91%;
 
 
   }
@@ -467,7 +469,7 @@
   }
   #cancelall{
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   }
   .choose{
   color: white;
@@ -495,4 +497,51 @@
   position: absolute;
   top: 62%;
   }
+  .searchContact{
+   position: absolute;
+   left: 33%;
+   top: 2.9%;
+   /* border-radius:; */
+   border: 1px solid rgb(74, 63, 63);
+   color: whitesmoke;
+   z-index: 1000;
+   display: none;
+   height: 1.3rem;
+   outline: none;
+   border-radius: 9px;
 
+  }
+  .searchResult{
+  position: absolute;
+  color:red;
+  z-index: 1000;
+ transform: translate(-50%,-50%);
+ top: 58%;
+ left: 47%;
+ display: none;
+  }
+  .notFound{
+ height: 10px;
+ background-repeat: no-repeat;
+ position: absolute;
+   top: 9rem;
+   left: 37%;
+   display: none;
+
+  }
+  .notFound img{
+    width: 80%;
+  }
+  .calling{
+    background-color: rgb(237, 230, 230);
+    height: 42rem;
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    border-radius: 21px;
+    display: none;
+  }
+  .callDetails{
+    color: white;
+  }
+ 

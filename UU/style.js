@@ -13,7 +13,12 @@ let home=document.querySelector('.home')
  let toggles = document.querySelector(".toggles");
  let home2=document.getElementById('home2')
  let call =document.querySelector('.call')
-
+ let searchResult=document.querySelector('.searchResult')
+ let notFound=document.querySelector('.notFound')
+ let boxMobile=document.getElementById('boxMobile')
+ let airtel=document.querySelector('.airtel')
+let calling=document.querySelector('.calling')
+let callingDetails=document.querySelector('.callingDetails')
  buttons.forEach(function(el,i){
   el.addEventListener('click',function(o){
   display.innerHTML+=`${i+1}`
@@ -40,11 +45,13 @@ number.addEventListener('click',function(){
 
  })
  contactBtn.addEventListener('click',function(){
+  document.querySelector('.searchContact').style.display='block'
  document.querySelector(".contactList").style.display='block'
  document.querySelector('.press').style.display='none'
  document.getElementById('display').style.display='none'
  document.querySelector('.contactInner').style.backgroundColor=' rgba(0, 0, 0, 0.603)'
  document.querySelector('.number').style.display='none'
+ document.querySelector('.notFound').style.display='none'
 //  alert('lkj')
  
  })
@@ -61,6 +68,7 @@ number.addEventListener('click',function(){
  let acc=document.getElementsByClassName("accordion")
  let sims=document.querySelector('.sims')
  let cancelCall=document.querySelector('.cancelCall')
+ let searchContact=document.querySelector('.searchContact')
  let store=''
 let dataIn= localStorage.getItem('store') ? JSON.parse(localStorage.getItem('store')) : [];
 seen(dataIn);
@@ -97,11 +105,13 @@ seen(dataIn);
    console.log(container);
 }
 function remove(index){
+ if (confirm('Are sure you want to delete this contact?')) {
   dataIn.splice(index,1)
   // container.innerHTML+=''
   localStorage.setItem('store', JSON.stringify(dataIn));
   dataIn = JSON.parse(localStorage.getItem('store'));
   seen(dataIn);
+ }
 }
 
 
@@ -129,6 +139,9 @@ home2.addEventListener('click',function(){
   document.getElementById('display').style.display='block'
   document.querySelector('.contactInner').style.backgroundColor= 'rgba(0, 0, 0, 0.898)'
   document.querySelector('.number').style.display='none'
+  document.querySelector('.searchContact').style.display='none'
+  document.querySelector('.searchResult').style.display='none'
+  document.querySelector('.notFound').style.display='none'
 
 })
 function bSpace(){
@@ -142,6 +155,8 @@ container.addEventListener('dblclick',function(){
   document.querySelector('.number').style.display='none'
   document.querySelector('.sims').style.display='block'
   document.getElementById('display').style.display='none'
+  document.querySelector('.searchContact').style.display='none'
+
 
 })
 cancelCall.addEventListener('click',function(){
@@ -154,6 +169,25 @@ call.addEventListener('click',function(){
   document.querySelector('.press').style.display='none'
   document.getElementById('display').style.display='none'
 })
+searchContact.addEventListener('input',function(){
+  const  newSearch=searchContact.value.toLowerCase()
+  const newContact=dataIn.filter(function(el){
+    let updatedArr=`${el.name}${el.lname}${el.phone}`.toLowerCase()
+     return updatedArr.includes(newSearch)
+    
+   })
+   document.querySelector('.searchResult').style.display='none'
+   document.querySelector('.notFound').style.display='none'
+   if (newContact.length===0) {
+   document.querySelector('.searchResult').style.display='block'
+  document.querySelector('.notFound').style.display='block'
+  searchResult.innerHTML='RESULT NOT FOUND'
+   }
+   seen(newContact)
+ })
+ airtel.addEventListener('click',function(){
+    const newCall=dataIn.forEach(function(el){
+      let seeCall=`ZZZZ`
+    })
 
-
-
+ })
