@@ -6,7 +6,6 @@
   transform: translateY(3.5rem);
   border-radius: 24px;
   border: 3.3px solid rgba(0, 0, 0, 0.294);
-
   }
   .body{
     overflow: hidden;
@@ -179,6 +178,9 @@
   /* padding: 10px; */
 
   }
+  .call .img-box:hover{
+    scale: 1.1;
+  }
   .abort{
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -197,10 +199,10 @@
   position: absolute;
   left: 1.5%;
   /* background-color: white; */
-  width:1.5rem;
+  width:1.25rem;
   height: 1.5rem;
   /* border-radius: 100rem; */
-  margin-top: -9px;
+  margin-top: -3.1px;
   /* border: 3px solid white; */
 
   }
@@ -208,7 +210,7 @@
   position: absolute;
   left: 1.5%;
   /* background-color: white; */
-  width:1.5rem;
+  width:1.25rem;
   height: 1.5rem;
   border-radius: 100rem;
   margin-top: 1rem;
@@ -222,7 +224,7 @@
   .type{
   color: white;
   position: absolute;
-  transform: translateY(-1rem);
+  transform: translateY(-1.3rem);
   left: 9%;
   font-size: 1.1rem;
   text-decoration: underline;
@@ -256,7 +258,7 @@
   }
   .recent-inner{
   font-size: 10px;
-  transform: translateY(-10px);
+  transform: translateY(-13px);
   display: block;
   color: white;
 
@@ -479,7 +481,7 @@
   .optionSims{
   margin-top: 1.4rem;
   position: absolute;
-  left: 4%;
+  left: 5.7%;
 
   }
   .airtel{
@@ -490,6 +492,13 @@
   color: white;
 
   }
+  .optionSims .airtel:hover{
+   scale: 1.1;
+   
+  }
+  .optionSims .mtn:hover{
+    scale: 1.1;
+  } 
   .underline{
   width: 100%;
   height: 1.2px;
@@ -544,4 +553,3 @@
   .callDetails{
     color: white;
   }
- 
