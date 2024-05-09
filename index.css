@@ -412,6 +412,13 @@
    }
    #canvas{
     position: absolute;
+    width: 8%;
+    left: 40%;
+    z-index: 1000;
+    height: 22%;
+    top: 12%;
+    
+    display: none;
 
 
    }

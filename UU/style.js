@@ -1,24 +1,51 @@
 let home=document.querySelector('.home')
-  let abort=document.querySelector('.abort')
-  let contactInner=document.querySelector('.contactInner')
-  let number=document.querySelector('.number')
-  let press=document.querySelector('.press')
- let buttons=document.querySelectorAll('.seen')
- let display=document.getElementById('display')
- let contact=document.querySelector('.contact')
- let mobile=document.querySelector('.mobile')
- let contactBtn=document.getElementById('contactBtn')
- let contactList=document.querySelector('.contactList')
- let announcement=document.querySelector('.announcement')
- let toggles = document.querySelector(".toggles");
- let home2=document.getElementById('home2')
- let call =document.querySelector('.call')
- let searchResult=document.querySelector('.searchResult')
- let notFound=document.querySelector('.notFound')
- let boxMobile=document.getElementById('boxMobile')
- let airtel=document.querySelector('.airtel')
+let abort=document.querySelector('.abort')
+let contactInner=document.querySelector('.contactInner')
+let number=document.querySelector('.number')
+let press=document.querySelector('.press')
+let buttons=document.querySelectorAll('.seen')
+let display=document.getElementById('display')
+let contact=document.querySelector('.contact')
+let mobile=document.querySelector('.mobile')
+let contactBtn=document.getElementById('contactBtn')
+let contactList=document.querySelector('.contactList')
+let announcement=document.querySelector('.announcement')
+let toggles = document.querySelector(".toggles");
+let home2=document.getElementById('home2')
+let call =document.querySelector('.call')
+let searchResult=document.querySelector('.searchResult')
+let notFound=document.querySelector('.notFound')
+let boxMobile=document.getElementById('boxMobile')
+let airtel=document.querySelector('.airtel')
 let calling=document.querySelector('.calling')
-let callingDetails=document.querySelector('.callingDetails')
+let callDetails=document.querySelector('.callDetails')
+let callDetail=document.getElementById('callDetail')
+let type=document.querySelector('.type')
+let callingStart=document.getElementById('callingStart')
+let  callInt;
+let abortCall=document.querySelector('.abortCall')
+let callDuration=document.getElementById('callDuration')
+let durationOk=document.querySelector('.durationOk')
+let callingAudio = document.getElementById('callingAudio');
+let recentCall = document.querySelector('.recentCall');
+let ring = document.getElementById('ring');
+let audioFiles = [
+    "pic/audiocall1.mp3",
+    "pic/audiocall2.wav",
+    "pic/audiocall3.wav",
+    "pic/audiocall4.wav",
+    "pic/audiocall5.wav",
+    "pic/audiocall6.m4a",
+    "pic/audiocall7.mp3",
+];
+
+function getRandomAudio() {
+    let randomIndex = Math.floor(Math.random() * audioFiles.length);
+    return audioFiles[randomIndex];
+}
+
+
+
  buttons.forEach(function(el,i){
   el.addEventListener('click',function(o){
   display.innerHTML+=`${i+1}`
@@ -37,7 +64,7 @@ number.addEventListener('click',function(){
   document.querySelector('.press').style.display='none'
   document.querySelector('.number').style.display='grid'
   document.getElementById('display').style.display='none'
-  // alert('kjhgfd')
+
   
  })
  home.addEventListener('click',function(){
@@ -69,6 +96,7 @@ number.addEventListener('click',function(){
  let sims=document.querySelector('.sims')
  let cancelCall=document.querySelector('.cancelCall')
  let searchContact=document.querySelector('.searchContact')
+ let duration=document.querySelector('.duration')
  let store=''
 let dataIn= localStorage.getItem('store') ? JSON.parse(localStorage.getItem('store')) : [];
 seen(dataIn);
@@ -98,7 +126,7 @@ seen(dataIn);
  function seen(arr){
   container.innerHTML=''
   arr.forEach(function(el,i){
-    container.innerHTML+=`<h4>${el.name} ${' '}${el.lname}${' '}  <br> ${el.phone} <button   onclick="remove(${i})"   id="delete" ><img src="pic/folder_trash__1_-removebg-preview.png" alt=""></button></br>
+    container.innerHTML+=`<h4 class="pointer">${el.name} ${' '}${el.lname}${' '}  <br> ${el.phone} <button   onclick="remove(${i})"   id="delete" ><img src="pic/folder_trash__1_-removebg-preview.png" alt=""></button></br>
 </h4>`
 
    })
@@ -147,6 +175,8 @@ home2.addEventListener('click',function(){
 function bSpace(){
  display.innerHTML=display.innerHTML.slice(0,-1)
 }
+let   selectedContact=" "
+let savedDisplayContent = "";
 container.addEventListener('dblclick',function(){
   document.querySelector(".contactList").style.display='none'
   document.querySelector('.press').style.display='none'
@@ -156,18 +186,37 @@ container.addEventListener('dblclick',function(){
   document.querySelector('.sims').style.display='block'
   document.getElementById('display').style.display='none'
   document.querySelector('.searchContact').style.display='none'
+  document.querySelector('.callDetails').style.display='none'
+  if (event.target.tagName === 'H4') {
+    const details = event.target.innerText;
+    selectedContact = details;
+    callDetail.innerHTML = '';
+    savedDisplayContent =''
+    // document.querySelector('.sims').style.display = 'none';
+    document.querySelector('.calling').style.display = 'block';
+    document.querySelector('.home').style.display = 'none';
+    document.querySelector('.type').style.display = 'none';
+  
+  }
 
 
 })
+document.getElementById('display').style.display='none'
 cancelCall.addEventListener('click',function(){
   document.querySelector('.sims').style.display='none'
   document.querySelector('.press').style.display='block'
   document.getElementById('display').style.display='block'
+  document.querySelector('.home').style.display='block'
+  document.querySelector('.calling').style.display='none'
+  document.querySelector('.type').style.display='block'
+  document.querySelector('.callDetails').style.display='none'
+  document.querySelector('.callingStart').style.display='none'
 })
 call.addEventListener('click',function(){
   document.querySelector('.sims').style.display='block'
   document.querySelector('.press').style.display='none'
   document.getElementById('display').style.display='none'
+  
 })
 searchContact.addEventListener('input',function(){
   const  newSearch=searchContact.value.toLowerCase()
@@ -185,9 +234,103 @@ searchContact.addEventListener('input',function(){
    }
    seen(newContact)
  })
- airtel.addEventListener('click',function(){
-    const newCall=dataIn.forEach(function(el){
-      let seeCall=`ZZZZ`
-    })
+//  callDetails.innerHTML = '';
+ airtel.addEventListener('click', function() {
+  timer()
+     document.querySelector('.calling').style.display = 'block';
+     document.querySelector('.home').style.display = 'none';
+     document.querySelector('.type').style.display = 'none';
+     callDetails.innerHTML=''
+     document.querySelector('.sims').style.display='block'
 
+  //    savedDisplayContent = display.innerHTML;
+  // callDetail.innerHTML = savedDisplayContent;
+  callDetail.innerHTML = selectedContact;
+  document.querySelector('.callDetails').style.display='block'
+  document.getElementById('callingStart').style.display='block'
+  document.querySelector('.sims').style.display='none'
+  document.querySelector('.abortCall').style.display='block'
+  ring.play()
  })
+
+abortCall.addEventListener('click', function () {
+    callingAudio.pause();
+    callingAudio.currentTime = 0;
+    document.getElementById('callDuration').style.display = 'block';
+    document.querySelector('.calling').style.display = 'none';
+    document.querySelector('.sims').style.display = 'none';
+    document.querySelector('.home').style.display = 'block';
+    document.querySelector('.number').style.display = 'grid';
+    document.getElementById('display').style.display = 'none';
+    document.querySelector('.type').style.display = 'block';
+    document.querySelector('.abortCall').style.display = 'none';
+    callDetails.innerHTML = '00:00:00';
+    clearInterval(callInt);
+    ring.pause();
+    duration.innerHTML = `Your last call duration was ${lastHours} hours, ${lastMinutes} minutes, ${lastSeconds} seconds`;
+
+    let recentCallItem = document.createElement('div');
+    recentCallItem.classList.add('recentCallItem');
+
+    recentCallItem.innerHTML = `<h4 class="recentCallBotton">${selectedContact}</h4><button class="deleteButton" onclick="deleteRecentCall(this)"><img src="pic/folder_trash__1_-removebg-preview.png" alt=""></button>`;
+
+    recentCall.appendChild(recentCallItem);
+    
+});
+
+
+function deleteRecentCall(button) {
+  if (confirm('Are you sure you want to delete this recent call?')) {
+   
+      let recentCallItem = button.parentNode;
+
+      let index = Array.from(recentCallItem.parentNode.children).indexOf(recentCallItem);
+      recentCallItem.parentNode.removeChild(recentCallItem);
+      dataIn.splice(index, 1);
+
+      recentCall.innerHTML=''
+      // localStorage.setItem('store', JSON.stringify(dataIn));
+      // seen(dataIn);
+  }
+}
+
+
+
+function timer(){
+let hours=0
+let min=0
+let sec=0
+
+ callInt=setInterval(() => {
+  sec++
+if (sec>=60) {
+  sec=0
+  min++
+}
+if (min>=60) {
+  sec=0
+  min=0
+  hours++
+  
+}
+      lastHours = hours;
+      lastMinutes = min;
+      lastSeconds = sec;
+
+document.getElementById('callingStart').style.display='none'
+  callDetails.innerHTML=`${hours.toString().padStart(2,0)}:${min.toString().padStart(2,0)}:${sec.toString().padStart(2,0)}`
+  ring.pause()
+       let randomAudio = getRandomAudio();
+       callingAudio.src = randomAudio;
+       callingAudio.play();
+
+},2000);
+}
+durationOk.addEventListener('click',function(){
+  document.getElementById('callDuration').style.display='none'
+})
+ 
+ 
+ 
+ 
+ 

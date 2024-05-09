@@ -6,9 +6,7 @@
   transform: translateY(3.5rem);
   border-radius: 24px;
   border: 3.3px solid rgba(0, 0, 0, 0.294);
-  }
-  .body{
-    overflow: hidden;
+
   }
   .phone-attachment{
   max-width:45% ;
@@ -18,8 +16,6 @@
   border-radius: 0 0 10px 10px;
   display: flex;
   column-gap: -8rem;
-  /* transform: translateY(-1.2rem); */
-
   }
 
   .item1{
@@ -140,6 +136,7 @@
   left: 7rem;
   text-align: center;
   padding: .5rem;
+  cursor: pointer;
   }
   .dott1{
   font-size: 19px;
@@ -152,6 +149,7 @@
   top: -10.4px;
   left: .1rem;
 
+
   }
   .dott{
   font-size: 19px;
@@ -163,6 +161,7 @@
   position: relative;
   top: .3rem;
   /* z-index: 1000; */
+  cursor: pointer;
   }
 
   .call img{
@@ -191,30 +190,24 @@
   top: -30px;
   position: relative;
   left: 6rem;
-  /* display: none; */
 
 
   }
   .home{
   position: absolute;
   left: 1.5%;
-  /* background-color: white; */
   width:1.25rem;
   height: 1.5rem;
-  /* border-radius: 100rem; */
   margin-top: -3.1px;
-  /* border: 3px solid white; */
 
   }
   #home2{
   position: absolute;
   left: 1.5%;
-  /* background-color: white; */
   width:1.25rem;
   height: 1.5rem;
   border-radius: 100rem;
   margin-top: 1rem;
-  /* border: 3px solid white; */
 
   }
   .home img{
@@ -238,7 +231,6 @@
   border-radius: 0 0 24px 24px;
   }
   .announcement-inner{
-  /* background-color:white ; */
   display: grid;
   grid-template-columns: repeat(2,1fr);
   margin: 0 auto;
@@ -246,7 +238,6 @@
   text-align: center;
   align-items: center;
   margin-top: -3px;
-  /* position:fixed ; */
 
   }
   .announcement-inner .recent img{
@@ -261,6 +252,7 @@
   transform: translateY(-13px);
   display: block;
   color: white;
+  cursor: pointer;
 
   }
   .contact-inner{
@@ -268,6 +260,7 @@
   transform: translateY(-10px);
   color: white;
   display: block;
+  cursor: pointer;
   /* left: 7rem; */
   }
   .call{
@@ -278,16 +271,14 @@
   .contactList{
   margin: 0 auto;
   max-width: inherit;
-  height:42rem;
-  background-color: rgba(0, 0, 0, 0.965);
-  transform: translateY(3.5rem);
+ height: 100%;
+  background-color: rgba(12, 11, 11, 0.965);
+  transform: translateY(14.63rem);
   border-radius: 20px;
-  /* border: 4px solid rgba(0, 0, 0, 0.504); */
-  position: relative;
+  position: absolute;
   top: -14.65rem;
-
-
   display: none;
+  overflow-y: scroll;
 
   }
   ::-webkit-scrollbar{
@@ -412,7 +403,7 @@
   .container{
   height: 2rem;
   color: white;
-  margin-top: 3rem;
+  margin-top: -.2rem;
   margin-left: 1.2rem;
   }
   .accordion img{
@@ -426,14 +417,14 @@
   text-decoration: underline;
   font-size: 20px;
   position: relative;
-  top: 1.1rem;
+  top: -.6rem;
   left: 2rem;
   }
   #delete{
   /* display: none; */
   margin-top: .2rem;
   margin-bottom: -1.1rem;
-  /* position: absolute; */
+  z-index: 1000;
   }
   #delete img{
   width: 7%;
@@ -482,14 +473,17 @@
   margin-top: 1.4rem;
   position: absolute;
   left: 5.7%;
+  cursor: pointer;
 
   }
   .airtel{
   margin-bottom: 1rem;
   color: white;
+  cursor: pointer;
   }
   .mtn{
   color: white;
+  cursor: pointer;
 
   }
   .optionSims .airtel:hover{
@@ -542,14 +536,106 @@
     width: 80%;
   }
   .calling{
-    background-color: rgb(237, 230, 230);
+  background-color: #0d0d0d;
     height: 42rem;
     width: 100%;
     position: absolute;
     z-index: 1000;
     border-radius: 21px;
+    text-align: center;
+    /* top: 50%; */
     display: none;
   }
   .callDetails{
     color: white;
+    position: relative;
+    top: 20%;
+    margin-bottom: 3.4rem;
+    display: none;
+    font-size: 19px;
+    /* position: absolute; */
+  }
+  #callDetail{
+    color: white;
+    font-size: 24px;
+    margin: 0 auto;
+    max-width: 80%;
+    font-weight: bolder;
+    /* margin-top: 3.7rem; */
+    left: 10%;
+    position: absolute;
+
+    
+  }
+  .pointer{
+    cursor: pointer;
+  }
+  #callingStart{
+  color: white;
+  margin-top: 8.8rem;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+  }
+  .abortCall{
+    display: none;
+    
+  }
+  .abortCall img{
+    position: absolute;
+    width: 14%;
+    top: 80%;
+    left: 42%;
+    z-index: 1000;
+ 
+  }
+  .abortCall img:hover{
+    transform: scale(1.2)
+  }
+  .duration{
+
+    padding:1rem ;
+  }
+  #callDuration{
+    width: 100%;
+    margin: 0 auto;
+    height: 9rem;
+    background-color: white;
+    position: absolute;
+    top: 37%;
+    border-radius: 12px;
+    text-align:justify ;
+    font-size: 14px;
+    font-weight: bold;
+    animation: durate 1s 1;
+    display: none;
+
+  }
+  .durationOk{
+    text-align: right;
+    position: relative;
+    left: -8%;
+    top: 10%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  @keyframes durate{
+    0%{
+      transform: scale(80%);
+    }
+  }
+  .recentCall{
+    position: absolute;
+    color: white;
+    top: 9%;
+    left: 1rem;
+  }
+  .deleteButton img{
+    width: 11%;
+    position: relative;
+    top: 2.7rem;
+    left: 60%;
+  }
+  .recentCallBotton{
+    margin-bottom: -4rem;
   }

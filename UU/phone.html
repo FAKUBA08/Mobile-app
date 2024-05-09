@@ -11,8 +11,20 @@
 <body>
     <div class="contact" style="background-color: white;">
       <div class="contactInner">
+        <div id="callDuration">
+         <p  class="duration" ></p>
+         <div class="durationOk">OK</div>
+        </div>
+        <audio id="callingAudio" style="display: none;"></audio>
         <div class="calling">
-          <p class="callDetails">ooooo</p>
+
+          <div class="abortCall">
+            <img src="pic/png-clipart-end-call-button-telephone-call-button-computer-icons-button-text-trademark-removebg-preview.png" alt="">
+          </div>
+          <p class="callDetails" >
+          </p>
+          <p id="callDetail"></p>
+          <p id="callingStart">Calling...</p>
         </div>
         <input type="text" class="searchContact" placeholder="search" id="search">
         <p class="searchResult"></p>
@@ -25,6 +37,8 @@
             <div class="mtn"><em class="sim2">MTN-NG</em></div>
           </div>
           
+        </div>
+        <div class="recentCall">
         </div>
         <div class="phone-attachment">
           <div class="item1">
@@ -198,7 +212,7 @@
     </p>
 
       </div>
-      
+      <audio src="pic/phone-calling-153844.mp3" style="display: none;" id="ring"></audio>
       </div>
 </body>
 <script src="style.js"></script>

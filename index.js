@@ -114,6 +114,7 @@ gallary.addEventListener('click',function(){
 })
 gallary.addEventListener('click',function(){
     document.querySelector('.home').style.display='block'
+    document.getElementById('canvas').style.display='block'
 
  
 })
@@ -164,13 +165,32 @@ snapButton.addEventListener('click', function () {
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    // const dataUrl= canvas.toDataURL('image/png');
+    const dataUrl = canvas.toDataURL('image/png');
 
-    snapshots.push(dataUrl);
+    snapshots.unshift(dataUrl);
+    displaySnapshots(); 
 });
-snapshots.forEach(function(el){
+function displaySnapshots() {
+    const gallery = document.querySelector('.gallery');
 
-})
+    snapshots.forEach((snapshot, index) => {
+        let isNewSnapshot = true;
+        gallery.querySelectorAll('img').forEach(img => {
+            if (img.src === snapshot) {
+                isNewSnapshot = false;
+            }
+        });
+
+        if (isNewSnapshot) {
+            const img = document.createElement('img');
+            img.src = snapshot;
+            img.alt = `Snapshot ${index + 1}`;
+            gallery.appendChild(img);
+        }
+    });
+}
+
+
 home.addEventListener('click',function(){
     mobileBox.classList.remove('cameraImage');
     document.querySelector('.time').style.display='block'
@@ -182,6 +202,7 @@ home.addEventListener('click',function(){
     video.style.display = 'none'; 
     document.querySelector('.home').style.display='none'
     document.getElementById('snap').style.display='none'
+    document.getElementById('canvas').style.display='none'
 
 
  
