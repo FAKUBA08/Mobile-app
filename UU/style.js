@@ -29,6 +29,13 @@ let durationOk=document.querySelector('.durationOk')
 let callingAudio = document.getElementById('callingAudio');
 let recentCall = document.querySelector('.recentCall');
 let ring = document.getElementById('ring');
+let balance=document.querySelector('.balance')
+let airtemBalance=document.querySelector('.airtemBalance')
+let airtemOk=document.querySelector('.airtemOk')
+let wrongInput=document.querySelector('.wrongInput')
+let wrongInputD=document.querySelector('.wrongInputD')
+let wrongInputOk=document.querySelector('.wrongInputOk')
+
 let audioFiles = [
     "pic/audiocall1.mp3",
     "pic/audiocall2.wav",
@@ -49,10 +56,12 @@ function getRandomAudio() {
  buttons.forEach(function(el,i){
   el.addEventListener('click',function(o){
   display.innerHTML+=`${i+1}`
+  document.querySelector('.backSpace').style.display='block'
   })
  })
  function check(numbers){
    display.innerHTML+=numbers
+   document.querySelector('.backSpace').style.display='block'
  }
 number.addEventListener('click',function(){
   document.querySelector('.press').style.display='block'
@@ -64,11 +73,13 @@ number.addEventListener('click',function(){
   document.querySelector('.press').style.display='none'
   document.querySelector('.number').style.display='grid'
   document.getElementById('display').style.display='none'
+  document.querySelector('.backSpace').style.display='none'
 
   
  })
  home.addEventListener('click',function(){
   window.location.href="/index.html"
+
 
  })
  contactBtn.addEventListener('click',function(){
@@ -79,6 +90,7 @@ number.addEventListener('click',function(){
  document.querySelector('.contactInner').style.backgroundColor=' rgba(0, 0, 0, 0.603)'
  document.querySelector('.number').style.display='none'
  document.querySelector('.notFound').style.display='none'
+ document.querySelector('.backSpace').style.display='none'
 //  alert('lkj')
  
  })
@@ -172,8 +184,15 @@ home2.addEventListener('click',function(){
   document.querySelector('.notFound').style.display='none'
 
 })
+// let backSpace=document.querySelector('. backSpace')
 function bSpace(){
  display.innerHTML=display.innerHTML.slice(0,-1)
+ if (display.innerHTML==='') {
+  document.querySelector('.backSpace').style.display='none'
+  
+ }else{
+  document.querySelector('.backSpace').style.display='block'
+ }
 }
 let   selectedContact=" "
 let savedDisplayContent = "";
@@ -187,6 +206,7 @@ container.addEventListener('dblclick',function(){
   document.getElementById('display').style.display='none'
   document.querySelector('.searchContact').style.display='none'
   document.querySelector('.callDetails').style.display='none'
+  document.querySelector('.calling').style.display = 'none';
   if (event.target.tagName === 'H4') {
     const details = event.target.innerText;
     selectedContact = details;
@@ -212,11 +232,55 @@ cancelCall.addEventListener('click',function(){
   document.querySelector('.callDetails').style.display='none'
   document.querySelector('.callingStart').style.display='none'
 })
+let airtemDetails=document.querySelector('.airtemDetails')
 call.addEventListener('click',function(){
   document.querySelector('.sims').style.display='block'
   document.querySelector('.press').style.display='none'
   document.getElementById('display').style.display='none'
-  
+  document.querySelector('.backSpace').style.display='none'
+  function call() {
+    if (display.innerHTML==='*310#') {
+  document.querySelector('.calling').style.display = 'none';
+  document.querySelector('.callDetails').style.display='none'
+  document.getElementById('callingStart').style.display='block'
+  document.querySelector('.sims').style.display='none'
+  document.querySelector('.abortCall').style.display='none'
+  document.querySelector('.home').style.display = 'block';
+  document.querySelector('.type').style.display = 'block';
+  clearInterval(callInt);
+  ring.pause()
+  // balance.innerHTML=`N${newAirtimeBalance}`
+  document.querySelector('.airtemBalance').style.display='block'
+ 
+  } if (display.innerHTML.startsWith('*') && display.innerHTML.endsWith('#') && display.innerHTML !=='*310#') {
+  wrongInputD.innerHTML='Invalid service code'
+ document.querySelector('.wrongInput').style.display='block'
+  document.querySelector('.airtemBalance').style.display='block'
+  document.querySelector('.calling').style.display = 'none';
+  document.querySelector('.callDetails').style.display='none'
+  clearInterval(callInt)
+  ring.pause()
+  }
+   }
+   airtel.addEventListener('click', function() {
+    call()
+   })
+})
+airtemOk.addEventListener('click',function(){
+  document.querySelector('.airtemBalance').style.display='none'
+  document.querySelector('.press').style.display='block'
+  document.getElementById('display').style.display='block'
+  talkTime.innerHTML='0.00'
+
+
+})
+wrongInputOk.addEventListener('click',function(){
+  document.querySelector('.airtemBalance').style.display='none'
+  document.querySelector('.press').style.display='block'
+  document.getElementById('display').style.display='block'
+  document.querySelector('.wrongInput').style.display=' none'
+
+
 })
 searchContact.addEventListener('input',function(){
   const  newSearch=searchContact.value.toLowerCase()
@@ -251,9 +315,30 @@ searchContact.addEventListener('input',function(){
   document.querySelector('.sims').style.display='none'
   document.querySelector('.abortCall').style.display='block'
   ring.play()
+  // call()
  })
+let initialAirtimeBalance = 500;
+
+let newAirtimeBalance = parseFloat(localStorage.getItem('airtimeBalance')) || initialAirtimeBalance;
+balance.innerHTML = `N${newAirtimeBalance}`;
+let talkTime=document.querySelector('.talkTime')
+talkTime.innerHTML='0.00'
 
 abortCall.addEventListener('click', function () {
+  
+    const deduction = 1.5;
+    if (newAirtimeBalance >= deduction) {
+        newAirtimeBalance -= deduction;
+        balance.innerHTML = `N${newAirtimeBalance}`;
+        talkTime.innerHTML=deduction;
+
+
+        localStorage.setItem('airtimeBalance', newAirtimeBalance.toString());
+    } else {
+  
+        alert("Insufficient balance. Please recharge your account.");
+    }
+
     callingAudio.pause();
     callingAudio.currentTime = 0;
     document.getElementById('callDuration').style.display = 'block';
@@ -274,28 +359,8 @@ abortCall.addEventListener('click', function () {
 
     recentCallItem.innerHTML = `<h4 class="recentCallBotton">${selectedContact}</h4><button class="deleteButton" onclick="deleteRecentCall(this)"><img src="pic/folder_trash__1_-removebg-preview.png" alt=""></button>`;
 
-    recentCall.appendChild(recentCallItem);
-    
+    recentCall.appendChild(recentCallItem);    
 });
-
-
-function deleteRecentCall(button) {
-  if (confirm('Are you sure you want to delete this recent call?')) {
-   
-      let recentCallItem = button.parentNode;
-
-      let index = Array.from(recentCallItem.parentNode.children).indexOf(recentCallItem);
-      recentCallItem.parentNode.removeChild(recentCallItem);
-      dataIn.splice(index, 1);
-
-      recentCall.innerHTML=''
-      // localStorage.setItem('store', JSON.stringify(dataIn));
-      // seen(dataIn);
-  }
-}
-
-
-
 function timer(){
 let hours=0
 let min=0
@@ -330,7 +395,42 @@ durationOk.addEventListener('click',function(){
   document.getElementById('callDuration').style.display='none'
 })
  
- 
- 
- 
- 
+ // Load recent calls from local storage when the page loads
+window.addEventListener('load', function() {
+  loadRecentCalls();
+});
+
+function loadRecentCalls() {
+  let recentCalls = JSON.parse(localStorage.getItem('recentCalls')) || [];
+  displayRecentCalls(recentCalls);
+}
+
+function displayRecentCalls(recentCalls) {
+recentCalls.forEach(function(call) {
+      let recentCallItem = document.createElement('div');
+      recentCallItem.classList.add('recentCallItem');
+      recentCallItem.innerHTML = `<h4 class="recentCallBotton">${call.contact}</h4><button class="deleteButton" onclick="deleteRecentCall(this)"><img src="pic/folder_trash__1_-removebg-preview.png" alt=""></button>`;
+      recentCall.appendChild(recentCallItem);
+  });
+}
+function saveRecentCall(contact) {
+  let recentCalls = JSON.parse(localStorage.getItem('recentCalls')) || [];
+  recentCalls.unshift({ contact: contact });
+  localStorage.setItem('recentCalls', JSON.stringify(recentCalls));
+}
+
+function deleteRecentCall(button) {
+    let recentCallItem = button.parentNode;
+    let index = Array.from(recentCallItem.parentNode.children).indexOf(recentCallItem);
+    recentCallItem.parentNode.removeChild(recentCallItem);
+
+    let recentCalls = JSON.parse(localStorage.getItem('recentCalls')) || [];
+    recentCalls.splice(index, 1); 
+    localStorage.setItem('recentCalls', JSON.stringify(recentCalls));
+  
+}
+
+
+abortCall.addEventListener('click', function () {
+  saveRecentCall(selectedContact);
+});

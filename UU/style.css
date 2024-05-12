@@ -117,7 +117,7 @@
   color: white;
   position: absolute;
   top: 50%;
-  left: 6rem;
+  left: 6rem; 
   font-size: 20px;
   font-weight: bold;
   display: none;
@@ -249,7 +249,7 @@
   }
   .recent-inner{
   font-size: 10px;
-  transform: translateY(-13px);
+  transform: translateY(-10px);
   display: block;
   color: white;
   cursor: pointer;
@@ -272,7 +272,7 @@
   margin: 0 auto;
   max-width: inherit;
  height: 100%;
-  background-color: rgba(12, 11, 11, 0.965);
+  background-color: rgb(12, 11, 11);
   transform: translateY(14.63rem);
   border-radius: 20px;
   position: absolute;
@@ -594,7 +594,7 @@
   }
   .duration{
 
-    padding:1rem ;
+    padding:.5rem 1rem .5rem 1rem ;
   }
   #callDuration{
     width: 100%;
@@ -609,6 +609,8 @@
     font-weight: bold;
     animation: durate 1s 1;
     display: none;
+    z-index: 1000;
+    font-size: 16px;
 
   }
   .durationOk{
@@ -638,4 +640,76 @@
   }
   .recentCallBotton{
     margin-bottom: -4rem;
+  }
+  .backSpace{
+    display: none;
+  }
+  .backSpace img{
+    background-color: rgba(255, 255, 255, 0.905);
+    width: 7%;
+    position: absolute;
+    top: 22rem;
+    left: 89%;
+    z-index: 1000;
+    border-radius: 10px;
+  }.airtemBalance{
+    width: 100%;
+    margin: 0 auto;
+    height: 7rem;
+    background-color: white;
+    position: absolute;
+    top: 37%;
+    border-radius: 12px;
+    text-align:justify ;
+    font-size: 14px;
+    font-weight: bold;
+    animation: durate 1s 1;
+    display: none;
+    z-index: 1000;
+    padding-bottom: 1rem;
+    
+  }
+  .airtemDetails{
+    padding: .9rem;
+  letter-spacing: normal;
+  line-height: 1.5rem;
+  font-size: 16px;
+
+  }
+  .airtemOk{
+    text-align: right;
+    position: relative;
+    left: -8%;
+    top: 20%;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+  .wrongInput{
+    width: 100%;
+    margin: 0 auto;
+    height: 7rem;
+    background-color: white;
+    position: absolute;
+    top: 37%;
+    border-radius: 12px;
+    text-align:justify ;
+    font-size: 14px;
+    font-weight: bold;
+    animation: durate 1s 1;
+    display: none;
+    z-index: 1000;
+    padding-bottom: 1rem;
+  }
+  .wrongInputD{
+    padding: 2rem 1rem .5rem 1rem;
+  }
+  .wrongInputOk{
+    text-align: right;
+    position: relative;
+    left: -8%;
+    top: 20%;
+    font-size: 20px;
+    cursor: pointer;
+
   }
