@@ -279,6 +279,8 @@ wrongInputOk.addEventListener('click',function(){
   document.querySelector('.press').style.display='block'
   document.getElementById('display').style.display='block'
   document.querySelector('.wrongInput').style.display=' none'
+  document.querySelector('.home').style.display = 'block';
+  document.querySelector('.type').style.display = 'block';
 
 
 })

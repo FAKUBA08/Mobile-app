@@ -125,72 +125,72 @@
   transform: translateY(-19rem);
   }
   .menuBtn{
-    /* transform: translateY(30rem); */
-     width: 50px;
-    background-color: black;
-    height: 50px;
-    margin: 0 auto;
-    border-radius: 100px;
-    border: 1.5px solid white;
-    position: relative;
-    transform: translateY(-.8rem);
-    display: none;
+  /* transform: translateY(30rem); */
+  width: 50px;
+  background-color: black;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 100px;
+  border: 1.5px solid white;
+  position: relative;
+  transform: translateY(-.8rem);
+  display: none;
   }
   .menuAdd{
-    display: none;
-    margin: 0 auto;
-    max-width: 100%;
+  display: none;
+  margin: 0 auto;
+  max-width: 100%;
   }
   .menus{
-    object-fit: contain;
-    max-width: 18%;
-    display: grid;
-    align-items: center;
-    margin: 0 auto;
-    position: relative;
-    top: -2rem;
-    grid-template-columns: repeat(auto-fit,minmax(2rem,1fr));
-    text-align: center;
-    left: -.2rem;
-  
-    /* display: none; */
-  
-    }
-    .phone1{
-    display: flex;
-    }
-    .phone2{
-    display: flex;
-    position: relative;
-    /* left: 1.2rem; */
-    }
-    .menuAdd img{
-    width: 40%;   
-    }
-    .camera img{
-    width: 60%;
-    }
-    .chrome img{
-    width: 67%;
-    align-items: center;
-    transform: translateY(12px);
-    }
-    .phone img {
-    width: 50%;
-    }
-    .message img{
-    width: 50%;
-    }
-    .gallary{
-      width: 10%;
-      margin: 0 auto;
-      transform: translateY(-16rem);
-      position: absolute;
-      left: 52%;
-    }
+  object-fit: contain;
+  max-width: 18%;
+  display: grid;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  top: -2rem;
+  grid-template-columns: repeat(auto-fit,minmax(2rem,1fr));
+  text-align: center;
+  left: -.2rem;
+
+  /* display: none; */
+
+  }
+  .phone1{
+  display: flex;
+  }
+  .phone2{
+  display: flex;
+  position: relative;
+  /* left: 1.2rem; */
+  }
+  .menuAdd img{
+  width: 40%;   
+  }
+  .camera img{
+  width: 60%;
+  }
+  .chrome img{
+  width: 67%;
+  align-items: center;
+  transform: translateY(12px);
+  }
+  .phone img {
+  width: 50%;
+  }
+  .message img{
+  width: 50%;
+  }
+  .gallary{
+  width: 10%;
+  margin: 0 auto;
+  transform: translateY(-16rem);
+  position: absolute;
+  left: 52%;
+  }
   .gallary img {
-    width: 40%;
-   
+  width: 40%;
+
 
   }
 
@@ -266,169 +266,169 @@
   }
   }
   .contactInner{
-    margin: 0 auto;
-    max-width: 21.5%;
-    height:42rem;
-    background-color: rgba(0, 0, 0, 0.898);
-    transform: translateY(-19.5rem);
-    border-radius: 24px;
-    display:none ;
-  
-    }
-    .press{
-    margin: 0 auto;
-    /* max-width: 99%; */
-    height:18rem;
-    background-color: rgba(0, 0, 0, 0.898);
-    transform: translateY(3.5rem);
-    border-radius:0 0 24px 24px;
-    position: relative;
-    top: 49%;
-    animation: animate 1s 1;
-    display: none;
-  
-    }
-    @keyframes animate{
-    0%{
-    transform: translateY(100%);
-    }
-    }
-    button{
-    background-color: transparent;
-    outline: none;
-    border: none;
-    font-size: 20px;
-    margin-bottom: 2rem;
-  
-  
-    }
-    .seen{
-    color: white;
-    }
-    .seen1{
-    color: white;
-    }
-    .Btn{
-    margin: 0 auto;
-    max-width: 90%;
-    column-gap: 6rem;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    transform: translateY(1rem);
-  
-  
-    }
-    #display{
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 6rem;
-    font-size: 20px;
-    font-weight: bold;
-    display: none;
-    }
-    .number{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    /* column-gap: -3rem; */
-    background-color: blue;
-    height: 2rem;
-    margin: 0 auto;
-    max-width: 2rem;
-    border-radius: 100rem;
-    top: 84%;
-    position: relative;
-    left: 6rem;
-    text-align: center;
-    padding: .5rem;
-    }
-    .dott{
-    font-size: 19px;
-    color: white;
-    /* width: 1px; */
-    font-weight: bolder;
-    max-width: -1px;
-    height: 1px;
-    position: relative;
-    top: -91%;
-    }
-  
-    .call img{
-    width: 3rem;
-  
-    }
-    .img-box{
-    transform: translateY(-.7rem);
-    position: relative;
-    left: 8.4rem;
-    width: 83%;
-    color: white;
-    /* padding: 10px; */
-  
-    }
-    .abort{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    height: 1rem;
-    margin: 0 auto;
-    max-width: 1rem;
-    border-radius: 100rem;
-    top: -10px;
-    position: relative;
-    left: 6rem;
-    /* display: none; */
-  
-  
-    }
-    .home{
-      position: absolute;
-      left: 1.5%;
-      /* background-color: white; */
-    width:1.5em;
-    height: 1.5rem;
-    border-radius: 100rem;
-    margin-top: 1rem;
-    /* border: 3px solid white; */
-  
-    }
-    .home img{
-      width: 100%;
-     /* align-items: center; */
-    }
-    .panel-hidden{
-      display:none;
-    }
-   #video{
-    margin: 0 auto;
-    width: 20.9%;
-    transform: translateY(5rem);
-    position:absolute;
-    z-index: 1000;
-    left: 39.54%;
-      height: 32rem;
-      top: 5%;
-      display: none;
+  margin: 0 auto;
+  max-width: 21.5%;
+  height:42rem;
+  background-color: rgba(0, 0, 0, 0.898);
+  transform: translateY(-19.5rem);
+  border-radius: 24px;
+  display:none ;
 
-   }
-   #canvas{
-    position: absolute;
-    width: 8%;
-    left: 40%;
-    z-index: 1000;
-    height: 22%;
-    top: 12%;
-    
-    display: none;
+  }
+  .press{
+  margin: 0 auto;
+  /* max-width: 99%; */
+  height:18rem;
+  background-color: rgba(0, 0, 0, 0.898);
+  transform: translateY(3.5rem);
+  border-radius:0 0 24px 24px;
+  position: relative;
+  top: 49%;
+  animation: animate 1s 1;
+  display: none;
+
+  }
+  @keyframes animate{
+  0%{
+  transform: translateY(100%);
+  }
+  }
+  button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  margin-bottom: 2rem;
 
 
-   }
-   .cameraImage{
-    background-image: url(picture/ap2MYd5_700b.jpg);
+  }
+  .seen{
+  color: white;
+  }
+  .seen1{
+  color: white;
+  }
+  .Btn{
+  margin: 0 auto;
+  max-width: 90%;
+  column-gap: 6rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  transform: translateY(1rem);
+
+
+  }
+  #display{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 6rem;
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+  }
+  .number{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /* column-gap: -3rem; */
+  background-color: blue;
+  height: 2rem;
+  margin: 0 auto;
+  max-width: 2rem;
+  border-radius: 100rem;
+  top: 84%;
+  position: relative;
+  left: 6rem;
+  text-align: center;
+  padding: .5rem;
+  }
+  .dott{
+  font-size: 19px;
+  color: white;
+  /* width: 1px; */
+  font-weight: bolder;
+  max-width: -1px;
+  height: 1px;
+  position: relative;
+  top: -91%;
+  }
+
+  .call img{
+  width: 3rem;
+
+  }
+  .img-box{
+  transform: translateY(-.7rem);
+  position: relative;
+  left: 8.4rem;
+  width: 83%;
+  color: white;
+  /* padding: 10px; */
+
+  }
+  .abort{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  height: 1rem;
+  margin: 0 auto;
+  max-width: 1rem;
+  border-radius: 100rem;
+  top: -10px;
+  position: relative;
+  left: 6rem;
+  /* display: none; */
+
+
+  }
+  .home{
+  position: absolute;
+  left: 1.5%;
+  /* background-color: white; */
+  width:1.5em;
+  height: 1.5rem;
+  border-radius: 100rem;
+  margin-top: 1rem;
+  /* border: 3px solid white; */
+
+  }
+  .home img{
+  width: 100%;
+  /* align-items: center; */
+  }
+  .panel-hidden{
+  display:none;
+  }
+  #video{
+  margin: 0 auto;
+  width: 20.9%;
+  transform: translateY(5rem);
+  position:absolute;
+  z-index: 1000;
+  left: 39.54%;
+  height: 32rem;
+  top: 5%;
+  display: none;
+
+  }
+  #canvas{
+  position: absolute;
+  width: 8%;
+  left: 40%;
+  z-index: 1000;
+  height: 22%;
+  top: 12%;
+
+  display: none;
+
+
+  }
+  .cameraImage{
+  background-image: url(picture/ap2MYd5_700b.jpg);
   min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
-   }
- #snap{
+  }
+  #snap{
   background-color:white;
   height: 2.5rem;
   width: 2.5rem;
@@ -439,8 +439,8 @@
   top: 84%;
   z-index: 1000;
   display: none;
- }
-.home{
+  }
+  .home{
   margin: 0 auto;
   width: .7%;
   left: 39.9%;
@@ -448,16 +448,422 @@
   z-index: 1000;
   transform: translateY(4.5rem);
   display: none;
-}
+  }
 
 
-
+  @media only screen and (max-width:1311px){
+    #video{
+      margin: 0 auto;
+      width: 23.9%;
+      transform: translateY(3rem);
+      position:absolute;
+      z-index: 1000;
+      left: 38.1%;
+      height: 32rem;
+      top: 5%;
+      display: none;
     
+      }
+      .home{
+       width: 1%;
+       left: 38.9%;
+      }
+    .phone-body{
+      width: 100%;
+    }
+  #phone-inner{
+  max-width: 27%;
+transform: translateY(.7rem);}
+  .menus{
+    max-width: 20%;
+  }
+.menuBtn{
+  transform: translateY(-4rem);
+}
+.menuAdd{
+  transform: translateY(-3rem);
+}
+  .camera img{
+    width: 70%;
+    }
+    .chrome img{
+    width: 79%;
+    align-items: center;
+    transform: translateY(13px);
+    }
+    .phone img {
+    width: 58%;
+    }
+    .message img{
+    width: 59%;
+    }
+    .gallary{
+    width: 13%;
+    margin: 0 auto;
+    transform: translateY(-16rem);
+    position: absolute;
+    left: 52%;
+    }
+    .gallary img {
+    width: 40%;
 
-
-
-
-
-
-
+  }
+  }
+  @media only screen and (max-width:1270px){
+    /* #video{
+      width: 28.9%;
+      left: 35.5%;
+    } */
+    .menus{
+      max-width: 22%;
+    }
+    .camera img{
+      width: 75%;
+      }
+      .chrome img{
+      width: 83%;
+      align-items: center;
+      transform: translateY(13px);
+      }
+      .phone img {
+      width: 63%;
+      }
+      .message img{
+      width: 63%;
+      }
+      .gallary{
+      width: 15%;
+      margin: 0 auto;
+      transform: translateY(-16rem);
+      position: absolute;
+      left: 52%;
+      }
+      .gallary img {
+      width: 40%;
   
+    }
+    .home{
+      width: 1.2%;
+      left: 37.9%;
+     }
+    }
+
+  @media only screen and (max-width:1227px){
+  #phone-inner{
+  max-width: 29%;
+  }
+
+  }
+  @media only screen and (max-width:1214px){
+  #phone-inner{
+  max-width: 29%;
+  }
+  
+  }
+  @media only screen and (max-width:1173px){
+  #phone-inner{
+  max-width: 31%;
+  }
+  #video{
+    left: 35%;
+     width: 30%;
+    }
+    .home{
+      width: 1.5%;
+      left: 36.9%;
+     }
+  }
+  @media only screen and (max-width:1090px){
+  #phone-inner{
+  max-width: 33%;
+   
+  }
+  #video{
+    left: 34%;
+     width: 32%;
+    }
+  .menus{
+    max-width: 25%;
+
+  }
+  .gallary{
+    width: 17%;
+  }
+  }
+  @media only screen and (max-width:1020px){
+  #phone-inner{
+  max-width: 35%;
+  }
+  }
+  @media only screen and (max-width:969px){
+  #phone-inner{
+  max-width: 39%;
+  }
+  #video{
+    left: 31%;
+     width: 38%;
+    }
+  .menus{
+    max-width: 30%;
+
+  }
+  .gallary{
+    width: 20%;
+  }
+  .home{
+    width: 1.9%;
+    left: 34.9%;
+   }
+  }
+  @media only screen and (max-width:890px){
+  #phone-inner{
+  max-width: 43%;
+  }
+  #video{
+    left: 29.3%;
+     width: 41.5%;
+    }
+  }
+  @media only screen and (max-width:809px){
+  #phone-inner{
+  max-width: 46%;
+  }
+  .menus{
+    max-width: 35%;
+
+  }
+  .gallary{
+    width: 22%;
+  }
+  #video{
+    left: 28%;
+     width: 44%;
+    }
+  }
+  @media only screen and (max-width:790px){
+  #phone-inner{
+  max-width: 49%;
+  }
+  #video{
+    left: 26.5%;
+     width: 47%;
+    }
+    .home{
+      width: 1.9%;
+      left: 30.9%;
+     }
+  }
+  @media only screen and (max-width:700px){
+  #phone-inner{
+  max-width: 52%;
+  }
+  .menus{
+    max-width: 40%;
+
+  }
+  .gallary{
+    width: 25%;
+  
+  }}
+  @media only screen and (max-width:665px){
+  #phone-inner{
+  max-width: 55%;
+  }
+  #video{
+    left: 23.5%;
+     width: 53%;
+    }
+    .home{
+      width: 2%;
+      left: 28.9%;
+     
+  }}
+  @media only screen and (max-width:640px){
+  #phone-inner{
+  max-width: 58%;
+  }
+  .menus{
+    max-width: 43%;
+
+  }
+  .gallary{
+    width: 28%;
+  
+  }
+  }
+  @media only screen and (max-width:590px){
+  #phone-inner{
+  max-width: 62%;
+  }
+  .menus{
+    max-width: 47%;
+
+  }
+  .gallary{
+    width: 34%;
+  
+  }
+  .home{
+    width: 2%;
+    left: 22.9%;
+  }
+  @media only screen and (max-width:560px){
+  #phone-inner{
+  max-width: 66%;
+
+  }
+  #video{
+    left: 19.5%;
+     width: 61%;
+    }}
+  }
+  @media only screen and (max-width:525px){
+  #phone-inner{
+  max-width: 70%;
+  }
+  .menus{
+    max-width: 50%;
+
+  }
+  .gallary{
+    width: 38%;
+  
+  }
+  #video{
+    left: 18%;
+     width: 64%;
+    }
+  }
+  
+  @media only screen and (max-width:489px){
+  #phone-inner{
+  max-width: 74%;
+  }
+  .menus{
+    max-width: 53%;
+
+  }
+  .gallary{
+    width: 41%;
+  
+  }
+  #video{
+    left: 11.5%;
+     width: 77%;
+    }
+    .home{
+      width: 3%;
+      left: 17.9%;
+  
+  }}
+  @media only screen and (max-width:475px){
+  #phone-inner{
+  max-width: 79%;
+  }
+  .menus{
+    max-width: 57%;
+
+  }
+  .gallary{
+    width: 43%;
+  
+  }
+  }
+  @media only screen and (max-width:415px){
+  #phone-inner{
+  max-width: 83%;
+  }
+  .menus{
+    max-width: 61%;
+
+  }
+  .gallary{
+    width: 46%;
+  
+  }
+  #video{
+    left: 10%;
+     width: 80%;
+    }
+    #snap{
+     left:45%;
+    }
+  
+  }
+  @media only screen and (max-width:405px){
+  #phone-inner{
+  max-width: 85%;
+  }
+  }
+  @media only screen and (max-width:399px){
+  #phone-inner{
+  max-width: 89%;
+  }
+  .menus{
+    max-width: 72%;
+
+  }
+  .gallary{
+    width: 48%;
+  
+  }
+  #video{
+    left: 6.5%;
+     width: 87%;
+    }
+    #snap{
+     left:45%;
+    }
+    .home{
+      width: 3%;
+      left: 13.9%;
+  
+  }
+  }
+  @media only screen and (max-width:380px){
+  #phone-inner{
+  max-width: 93%;
+  }
+  }
+  @media only screen and (max-width:370px){
+  #phone-inner{
+  max-width: 95%;
+  }
+  }
+  @media only screen and (max-width:360px){
+  #phone-inner{
+  max-width: 100%;
+  }
+  .menus{
+    max-width: 84%;
+
+  }
+  .gallary{
+    width: 57%;
+  
+  }
+  #video{
+    left: 5%;
+     width: 90%;
+    }
+    #snap{
+     left:45%;
+    }
+    .home{
+      width: 3.2%;
+      left: 10.9%;
+  
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
