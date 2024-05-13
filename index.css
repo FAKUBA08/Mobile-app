@@ -797,7 +797,7 @@ transform: translateY(.7rem);}
   }
   @media only screen and (max-width:399px){
   #phone-inner{
-  max-width: 89%;
+  max-width: 84%;
   }
   .menus{
     max-width: 72%;
@@ -822,17 +822,17 @@ transform: translateY(.7rem);}
   }
   @media only screen and (max-width:380px){
   #phone-inner{
-  max-width: 93%;
+  max-width: 89%;
   }
   }
   @media only screen and (max-width:370px){
   #phone-inner{
-  max-width: 95%;
+  max-width: 92%;
   }
   }
   @media only screen and (max-width:360px){
   #phone-inner{
-  max-width: 100%;
+  max-width: 95%;
   }
   .menus{
     max-width: 84%;
