@@ -713,6 +713,7 @@
     top: 20%;
     font-size: 20px;
     cursor: pointer;
+    padding-bottom: 2rem;
 
   }
   @media only screen and (max-width:1312px){
@@ -742,6 +743,15 @@
       max-width: 33%;
       transform: translateY(.1rem);
     }
+    .airtemOk{
+      text-align: right;
+      position: relative;
+      left: -8%;
+      top: 1%;
+      font-size: 20px;
+      cursor: pointer;
+  
+    }
 
   }
   @media only screen and (max-width:1014px){
@@ -756,6 +766,7 @@
       max-width: 39%;
       transform: translateY(.1rem);
     }
+  
 
   }
   @media only screen and (max-width:862px){
